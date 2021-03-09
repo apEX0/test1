@@ -7,10 +7,12 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="postgresql-42.2.191" level="project" />
+    <orderEntry type="library" name="postgresql-42.2.19" level="project" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://C:/Program Files/xerces1/tools/serializer.jar!/" />
+          <root url="jar://$MODULE_DIR$/serializer.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -19,7 +21,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://C:/Program Files/xerces1/tools/xercesImpl.jar!/" />
+          <root url="jar://$MODULE_DIR$/xercesImpl.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

@@ -9,10 +9,19 @@ import ru.cbr.web.EnumValutesResponse.EnumValutesResult;
 import ru.cbr.web.GetCursOnDateResponse.GetCursOnDateResult;
 import ru.cbr.web.GetCursOnDate;
 import ru.cbr.web.GetCursOnDateXMLResponse.GetCursOnDateXMLResult;
+import java.sql.DriverManager;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
 
 public class Main {
 
+
     public static void main(String[] args) {
+
+
         DailyInfo service = new DailyInfo();
         DailyInfoSoap port = service.getDailyInfoSoap();
 
@@ -26,26 +35,21 @@ public class Main {
         EnumValutesResult en = port.enumValutes(false);
         GetCursOnDateResult curs = port.getCursOnDate(onDate);
 
+        System.out.println(onDate);
+
         onDate = port.getLatestDateTime();
         GetCursOnDateXMLResult result = port.getCursOnDateXML(onDate);
         Valute list = null;
 
         try {
 
-           list = GetCursOnDateResultParser.getValuteByValuteCh("USD", result);
+            list = GetCursOnDateResultParser.getValuteByValuteCh(result);
 
-       } catch (Exception e){
+        } catch (Exception e) {
 
         }
-       System.out.println(list.curs);
 
-      /*  try {
-                list = GetCursOnDateResultParser.getValuteByValuteCode("840", result);
-            } catch (Exception e) {
-
-            }
-            System.out.println(list.curs);*/
-        }
     }
+}
 
 
